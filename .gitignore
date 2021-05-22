@@ -1,3 +1,6 @@
 # Intellij project files
 .idea
 *.iml
+
+# Binary
+notion-exporter
