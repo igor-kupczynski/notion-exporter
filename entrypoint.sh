@@ -35,9 +35,10 @@ cd "${REPO}" && git add "$2" && git commit -am "Pulled content from notion at ${
 set -e
 
 if [ "$?" -ne "0" ]; then
-    echo "nothing to commit"
+    echo ":: Nothing to commit"
     exit 0
 else
+  echo ":: Push the commit"
   git push "https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" "${BRANCH}"
 fi
 
