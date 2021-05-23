@@ -8,7 +8,6 @@ RUN go build -o notion-exporter -v ./...
 
 FROM alpine:latest
 RUN apk --no-cache add ca-certificates git rsync
-WORKDIR /app
-COPY --from=0 /app/notion-exporter .
-COPY --from=0 /app/entrypoint.sh .
-ENTRYPOINT ["./entrypoint.sh"]
+COPY --from=0 /app/notion-exporter /app/notion-exporter
+COPY --from=0 /app/entrypoint.sh /app/entrypoint.sh
+ENTRYPOINT ["/app/entrypoint.sh"]
