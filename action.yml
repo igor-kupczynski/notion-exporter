@@ -15,8 +15,8 @@ runs:
   using: docker
   image: Dockerfile
   env:
-    GITHUB_TOKEN: ${{ github.token }}
-    NOTION_TOKEN: ${{ inputs.notion-token }}
+    GITHUB_TOKEN: "${{ github.token }}"
+    NOTION_TOKEN: "${{ inputs.notion-token }}"
   args:
-    - ${{ inputs.pages }}
-    - ${{ inputs.output-dir }}
+    - "${{ inputs.pages }}"
+    - "${{ inputs.output-dir }}"
