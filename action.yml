@@ -1,0 +1,22 @@
+name: "Notion Exporter"
+description: "Export notion pages and commit them to the repo"
+inputs:
+    pages:
+      description: "Comma-separated list of page to export the data from"
+      required: true
+    notion-token:
+      description: "value of the token_v2 cookie, required if the page is not public"
+      required: false
+      default: ""
+    output-dir:
+        description: "directory under your repo to sync the data to; note the existing files will be deleted"
+        required: true
+runs:
+  using: docker
+  image: Dockerfile
+  env:
+    GITHUB_TOKEN: ${{ github.token }}
+    NOTION_TOKEN: ${{ inputs.notion-token }}
+  args:
+    - ${{ inputs.pages }}
+    - ${{ inputs.output-dir }}
