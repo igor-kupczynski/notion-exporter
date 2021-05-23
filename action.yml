@@ -14,12 +14,17 @@ inputs:
     output-dir:
         description: "Directory under your repo to sync the data to; note the existing files will be deleted"
         required: true
+    branch:
+        description: "Branch to use; defaults to 'main'"
+        required: true
+        default: "main"
 runs:
   using: docker
   image: Dockerfile
   env:
     GITHUB_TOKEN: "${{ inputs.github-token }}"
     NOTION_TOKEN: "${{ inputs.notion-token }}"
+    BRANCH: "${{ inputs.branch }}"
   args:
     - "${{ inputs.pages }}"
     - "${{ inputs.output-dir }}"
