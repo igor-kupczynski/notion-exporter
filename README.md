@@ -36,7 +36,7 @@ jobs:
 
 ## Inputs
 
-###  `pages`
+### `pages`
 
 Comma-separated list of page to export the data from.
 
@@ -51,14 +51,14 @@ The page can be private.
 ![Share menu](imgs/share-menu.png)
 
 
-### github-token
+### `github-token`
 
 Github token to use to commit to the repo. Most of the time we can pass the default github action token:
 ```yaml
 github-token: ${{ secrets.GITHUB_TOKEN }}
 ```
   
-### notion-token
+### `notion-token`
 
 Value of the `token_v2` cookie, required if the page is not public.
 
@@ -70,7 +70,7 @@ You can grab it from your web browser. E.g. in chrome:
 5. Copy the value of `token_v2` cookie
 
 
-### output-dir
+### `output-dir`
 
 Directory under your repo to sync the data to.
 
@@ -78,6 +78,6 @@ Directory under your repo to sync the data to.
 
 In the demo we set it to [`notion-backup`](https://github.com/igor-kupczynski/notion-exporter-demo/tree/main/notion-backup).
 
-### (optional) branch
+### (optional) `branch`
 
 The branch to use, if not provided then it defaults to `main`.
