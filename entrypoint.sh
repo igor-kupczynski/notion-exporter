@@ -20,8 +20,9 @@ fi
 # Use this user email https://github.com/actions
 git config --global user.email 41898282+github-actions[bot]@users.noreply.github.com
 git config --global user.name "Notion Exporter"
+git config --global github.token "${GITHUB_TOKEN}"
 
-echo ":: Cloning github.com/${GITHUB_REPOSITORY} into ${REPO}"
+echo ":: Cloning github.com/${GITHUB_REPOSITORY} ${BRANCH} into ${REPO}"
 git clone --branch "${BRANCH}" "https://${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}" "$REPO"
 
 echo ":: Exporting ${PAGES} into ${OUTPUT}"
@@ -37,7 +38,7 @@ if [ "$?" -ne "0" ]; then
     echo "nothing to commit"
     exit 0
 else
-  git push "https://${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}" "${BRANCH}"
+  git push "https://${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" "${BRANCH}"
 fi
 
 
