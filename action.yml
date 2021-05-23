@@ -4,18 +4,21 @@ inputs:
     pages:
       description: "Comma-separated list of page to export the data from"
       required: true
+    github-token:
+      description: "Github token to use to commit to the repo"
+      required: true
     notion-token:
-      description: "value of the token_v2 cookie, required if the page is not public"
+      description: "Value of the token_v2 cookie, required if the page is not public"
       required: false
       default: ""
     output-dir:
-        description: "directory under your repo to sync the data to; note the existing files will be deleted"
+        description: "Directory under your repo to sync the data to; note the existing files will be deleted"
         required: true
 runs:
   using: docker
   image: Dockerfile
   env:
-    GITHUB_TOKEN: "${{ github.token }}"
+    GITHUB_TOKEN: "${{ inputs.github-token }}"
     NOTION_TOKEN: "${{ inputs.notion-token }}"
   args:
     - "${{ inputs.pages }}"
