@@ -8,9 +8,8 @@ inputs:
       description: "Github token to use to commit to the repo"
       required: true
     notion-token:
-      description: "Value of the token_v2 cookie, required if the page is not public"
-      required: false
-      default: ""
+      description: "Value of the token_v2 cookie"
+      required: true
     output-dir:
         description: "Directory under your repo to sync the data to; note the existing files will be deleted"
         required: true

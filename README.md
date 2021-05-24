@@ -60,7 +60,7 @@ github-token: ${{ secrets.GITHUB_TOKEN }}
   
 ### `notion-token`
 
-Value of the `token_v2` cookie, required if the page is not public.
+Value of the `token_v2` cookie.
 
 You can grab it from your web browser. E.g. in chrome:
 1. Log-in to notion and go to your workspace.

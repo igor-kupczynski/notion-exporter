@@ -30,10 +30,14 @@ var allowedExtensions = map[string]struct{}{
 }
 
 func main() {
-	flag.StringVar(&flagToken, "token", "", "value of the token_v2 cookie, required if the page is not public")
+	flag.StringVar(&flagToken, "token", "", "[required] value of the token_v2 cookie")
 	flag.StringVar(&flagOutput, "output", "", "[required] directory to sync the data to; note the existing files will be deleted")
 	flag.StringVar(&flagPages, "pages", "", "[required] comma-separated list of page to export the data from")
 	flag.Parse()
+
+	if flagPages == "" {
+		log.Fatalf("Missing required flag -token")
+	}
 
 	if flagPages == "" {
 		log.Fatalf("Missing required flag -pages")
