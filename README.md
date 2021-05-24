@@ -78,6 +78,6 @@ Directory under your repo to sync the data to.
 
 In the demo we set it to [`notion-backup`](https://github.com/igor-kupczynski/notion-exporter-demo/tree/main/notion-backup).
 
-### (optional) `branch`
+### (optional) `force-branch`
 
-The branch to use, if not provided then it defaults to `main`.
+By default, the action discovers the branch to commit to from the `GITHUB_REF` var, but you can override it with `force-branch` input.

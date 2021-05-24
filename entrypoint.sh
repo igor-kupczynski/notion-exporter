@@ -4,7 +4,7 @@ set -u -e
 # Set through the github action:
 # - GITHUB_TOKEN
 # - NOTION_TOKEN
-# - BRANCH
+# - FORCE_BRANCH
 # - GITHUB_REPOSITORY
 
 NOW=$(date "+%Y-%m-%d %T")
@@ -15,6 +15,12 @@ OUTPUT="$REPO/$2"
 if [ $# -lt 2 ]; then
   echo 1>&2 "$0: not enough arguments, provide <pages> <output-dir>"
   exit 2
+fi
+
+if [ -n "$FORCE_BRANCH" ]; then
+  BRANCH="$FORCE_BRANCH"
+else
+  BRANCH="${GITHUB_REF##*/}"
 fi
 
 # Use this user email https://github.com/actions
