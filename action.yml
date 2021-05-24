@@ -1,5 +1,8 @@
 name: "Notion Exporter"
 description: "Export notion pages and commit them to the repo"
+branding:
+  icon: external-link
+  color: white
 inputs:
     pages:
       description: "Comma-separated list of page to export the data from"
