@@ -92,6 +92,12 @@ func export(pages, output, token string) error {
 
 // verifyDir verifies if the given
 func verifyDir(dir string) error {
+	// if we run on github actions don't verify the dir; it is safe to continue (as any changes will be commited to
+	// a git repo, so there's a way back)
+	if os.Getenv("GITHUB_RUN_ID") != "" {
+		return nil
+	}
+
 	files, err := ioutil.ReadDir(dir)
 	if err != nil {
 		return fmt.Errorf("can't validate the target directory %s: %w", dir, err)

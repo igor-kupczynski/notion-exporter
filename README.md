@@ -74,7 +74,7 @@ You can grab it from your web browser. E.g. in chrome:
 
 Directory under your repo to sync the data to.
 
-⚠️ the existing content of the directory will be deleted, use with care
+🔥🔥🔥 Note the existing content of the directory will be deleted, use with care.
 
 In the demo we set it to [`notion-backup`](https://github.com/igor-kupczynski/notion-exporter-demo/tree/main/notion-backup).
 
