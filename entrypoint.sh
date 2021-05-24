@@ -29,7 +29,7 @@ git config --global user.name "Notion Exporter"
 git config --global github.token "${GITHUB_TOKEN}"
 
 echo ":: Cloning github.com/${GITHUB_REPOSITORY} ${BRANCH} into ${REPO}"
-git clone --branch "${BRANCH}" "https://${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}" "$REPO"
+git clone --branch "${BRANCH}" "https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}" "$REPO"
 
 echo ":: Exporting ${PAGES} into ${OUTPUT}"
 /app/notion-exporter -pages "${PAGES}" -token "${NOTION_TOKEN}" -output "${OUTPUT}"
