@@ -50,7 +50,7 @@ jobs:
   export:
     runs-on: ubuntu-latest
     steps:
-      - uses: igor-kupczynski/notion-exporter@v1.0.1
+      - uses: igor-kupczynski/notion-exporter@v1.0.2
         with:
           pages: "e9ddb02b4745455097ad9d5fef6336a2,e65ccf14e13b48d1a6d1b14cd84c4bed"  # Pages IDs identified in (step 2)  
           output-dir: notion-backup
