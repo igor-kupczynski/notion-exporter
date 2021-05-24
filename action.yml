@@ -1,5 +1,5 @@
 name: "Notion Exporter"
-description: "Export notion pages and commit them to the repo"
+description: "Notion Exporter is a github action which allows you to export the content of your Notion (notion.so) pages and databases as markdown, to a github repo."
 branding:
   icon: external-link
   color: white
