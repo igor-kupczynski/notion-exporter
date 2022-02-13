@@ -1,3 +1,6 @@
+**UPDATE 2022-02-13**: No longer maintained, as I don't use notion anymore. Sorry for the inconvience.
+
+
 # notion-exporter
 
 Notion Exporter is a github action which allows you to export the content of your Notion ([notion.so](https://notion.so)) pages and databases as markdown, to a github repo.
